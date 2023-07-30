@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor</title>
+    <link rel="Stylesheet" href="styling.css" type="text/css">
+</head>
+<script>
+    function validation(){
+    var letters = /^[A-Za-z]+$/;
+    var em = /^[A-Za-z0-9]+@[A-Za-z]+.[A-Za-z]+$/;
+    var x=document.getElementById("name").value;
+    var y=document.getElementById("lastname").value;
+    var mai=document.getElementById("mail").value;
+    var mobno=document.getElementById("mobile no").value;
+    if(x==null||x=="")
+    {
+        alert("Enter Valid First Name");
+        return false;
+    }
+    else if(x.length>20)
+    {
+        alert("First Name should be less than 20 charcters");
+        return false;
+    }
+    else if(!x.match(letters))
+    {
+        alert("Enter only alphabets");
+        return false;
+    }
+   
+    if(y==null||y=="")
+    {
+        alert("Enter Valid Last Name");
+        return false;
+    }
+    else if(y.length>20)
+    {
+        alert("Last Name should be less than 20 charcters");
+        return false;
+    }
+    else if(!y.match(letters))
+    {
+        alert("Enter only alphabets");
+        return false;
+    }
+    
+    if(!mai.match(em))
+    {
+        alert("Enter valid Email ID");
+        return false;
+    }
+  
+    if(mobno.length!=10)
+    {
+        alert("Mobile Number should be 10 digits.");
+        return false;
+    }
+}
+    
+</script>
+   
+    <body style="background-color:rgb(99, 22, 54);"></body>
+
+<div class="container">
+        
+        <form name="Doctor" action="HOME.html" onsubmit="return validation()">
+            <h1>Add Doctor Details</h1>
+        <div class=" input group">
+            <div class="input field">
+                <label>First Name</label>
+                <input type="text" placeholder="" id="name">
+            </div>
+            <div class="input field">
+                <label>Middle Name</label>
+                <input type="text" placeholder="">
+            </div>
+            <div class="input field">
+                <label>Last Name</label>
+                <input type="text" placeholder="" id="lastname">
+            </div>
+            <div class="input field">
+                <label>Register number</label>
+                <input type="number" required>
+            </div>
+            <div class="input field">
+                <label>Date of Birth</label>
+                <input type="date" required>
+            </div>
+            <div class="input field">
+                <label>Gender</label>
+                <input type="radio" value="Male" required>Male
+                <input type="radio" value="Female" required>Female
+            </div>
+            <div class="input field">
+                <label>Email</label>
+                <input type="text" placeholder="" id="mail" required>
+            </div>
+            <div class="input field">
+                <label>Specialisation</label>
+                <input type="text" placeholder="" required>
+            </div>
+            <div class="input field">
+                <label>Qualification</label>
+                <input type="text" placeholder="" required>
+            </div>
+            <div class="input field">
+                <label>Contact number</label>
+                <input type="number" placeholder="" id="mobile no" required>
+            </div>
+            <div class="input field">
+                <label>Address</label>
+                <textarea rows="3" required></textarea> 
+            </div>
+            <div class="input field">
+                <label>Visiting Time</label>
+                <select text-align: center; name="vis_time" required>
+                    <option>Monday</option>
+                    <option>Tuesday</option>
+                    <option>Wednesday</option>
+                    <option>Thursday</option>
+                    <option>Friday</option>
+                    <option>Saturday</option>
+                    <option>Sunday</option>
+                </select>
+            </div>
+            <div class="input field">
+                <label>No of patients per day</label>
+                <input type="number" required> 
+            </div>
+            <div class="input field">
+                <label>Department Number</label>
+                <input type="number" required> 
+            </div>
+            <div class="button">
+            <button type="submit"  value="Submit">Submit</button>
+            <button type="submit"  value="reset">reset</button>
+            </div>
+        </div>
+    </div>
+</div>
+</form>

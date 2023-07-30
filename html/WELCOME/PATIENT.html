@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>patient</title>
+    <link rel="Stylesheet" href="styling.css" type="text/css">
+</head>
+<script>
+    function val(){
+        var letters = /^[A-Za-z]+$/;
+        var em = /^[A-Za-z]+@[A-Za-z]+.[A-Za-z]+$/;
+        var x=document.getElementById("name").value;
+        var y=document.getElementById("lastname").value;
+        var z=document.getElementById("fathspou").value;
+        var v=document.getElementById("mobile no").value;
+        var w=document.getElementById("mail").value;
+        if(x==null||x=="")
+        {
+            alert("Enter Valid First Name");
+            return false;
+        }
+        else if(x.length>30)
+        {
+            alert("First Name should be less than 20 charcters");
+            return false;
+        }
+        else if(!x.match(letters))
+        {
+            alert("Enter only alphabets");
+            return false;
+        }
+        if(y==null||y=="")
+        {
+            alert("Enter Valid Last Name");
+            return false;
+        }
+        else if(y.length>30)
+        {
+            alert("Last Name should be less than 20 charcters");
+            return false;
+        }
+        else if(!y.match(letters))
+        {
+            alert("Enter only alphabets");
+            return false;
+        }
+        if(z==null||z=="")
+        {
+            alert("Enter Valid father/Spouse Name");
+            return false;
+        }
+        else if(z.length>30)
+        {
+            alert("Father/Spouse Name should be less than 20 charcters");
+            return false;
+        }
+        else if(!z.match(letters))
+        {
+            alert("Enter only alphabets");
+            return false;
+        }
+        if(v.length!=10)
+        {
+            alert("Mobile Number should be 10 digits.");
+            return false;
+        }
+        if(!w.match(em))
+        {
+            alert("Enter valid Email ID");
+            return false;
+        }
+
+        }
+    </script>
+
+   
+    <body style="background-color:rgb(99, 22, 54);"></body>
+
+<div class="container">
+    <div class="form">
+        <h1>Patient Details</h1>
+        <form name="patients" action="HOME.html" onsubmit="return val()">
+        <div class=" input group">
+            <div class="input field">
+                <label>First Name</label>
+                <input type="text" placeholder="" id="name">
+            </div>
+            <div class="input field">
+                <label>Middle Name</label>
+                <input type="text" placeholder="">
+            </div>
+            <div class="input field">
+                <label>Last Name</label>
+                <input type="text" placeholder="" id="lastname">
+            </div>
+            <div class="input field">
+                <label>Date of Birth</label>
+                <input type="date" required>
+            </div>
+            <div class="input field">
+                <label>Gender</label>
+                <input type="radio" value="Male" required>Male
+                <input type="radio" value="Female" required>Female
+            </div>
+            <div class="input field">
+                <label>Father/spouse Name</label>
+                <input type="text" placeholder="" id="fathspou" required>
+            </div>
+            <div class="input field">
+                <label>Blood Group</label>
+                <select name="blood group" required>
+                    <option>A1+</option>
+                    <option>O+</option>
+                    <option>AB+</option>
+                    <option>AB-</option>
+                    <option>A+</option>
+                    <option>A-</option>
+                    <option>B+</option>
+                    <option>B-</option>
+                </select>
+            </div>
+            <div class="input field">
+                <label>Contact number</label>
+                <input type="number" id="mobile no" required>
+            </div>
+            <div class="input field">
+                <label>visited Earlier</label>
+                <input type="checkbox">
+            </div>
+            <div class="input field">
+                <label>Email</label>
+                <input type="text" placeholder="" id="mail" required>
+            </div>
+            <div class="button">
+            <button type="submit"  value="Submit">Submit</button>
+            <button type="submit"  value="reset">reset</button>
+            </div>
+        </div>
+    </div>
+</div>
+</form>

@@ -1,0 +1,121 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Department</title>
+    <link rel="Stylesheet" href="styling.css" type="text/css">
+</head>
+    <script>
+        function val()
+        {
+            var letters = /^[A-Za-z]+$/;
+            var decno = /^[0-9]+.[0-9][0-9]$/;
+            var x=document.getElementById("dept name").value;
+            var y=document.getElementById("desc").value;
+            var z=document.getElementById("gn").value;
+            var u=document.getElementById("ac").value;
+            var v=document.getElementById("nac").value;
+            var w=document.getElementById("icu").value;
+            if(x==null||x=="")
+            {
+                alert("Enter Valid Department Name");
+                return false;
+            }
+            else if(x.length>30)
+            {
+                alert("Department Name should be less than 20 charcters");
+                return false;
+            }
+            else if(!x.match(letters))
+            {
+                alert("Enter only alphabets");
+                return false;
+            }
+            if(y.length>50)
+            {
+                alert("Description should be less than 50 charcters");
+                return false;
+            }
+            if(!z.match(decno))
+            {
+                alert("Enter valid Cost of general room ");
+                return false;
+            }
+            if(!u.match(decno))
+            {
+                alert("Enter valid Cost of AC room ");
+                return false;
+            }
+            if(!v.match(decno))
+            {
+                alert("Enter valid Cost of Non AC room ");
+                return false;
+            }
+            if(!w.match(decno))
+            {
+                alert("Enter valid Cost of each ICU ");
+                return false;
+            }
+            
+        }
+    </script>
+    <body style="background-color:rgb(102, 81, 22);"></body>
+
+<div class="container">
+    <form name="Department" action="HOME.html" onsubmit="return val()">
+        <h1>DEPARTMENT DETAILS</h1>
+        <div class=" input group">
+            <div class="input field">
+                <label>Department name</label>
+                <input type="text" placeholder="" id="dept name">
+            </div>
+            <div class="input field">
+                <label>Department Description</label>
+                <input type="text" placeholder="" id="desc">
+            </div>
+            <div class="input field">
+                <label>No of Doctors</label>
+                <input type="number" required>
+            </div>
+            <div class="input field">
+                <label>No of AC rooms</label>
+                <input type="number" required>
+            </div>
+            <div class="input field">
+                <label>No of genral rooms</label>
+                <input type="number"  required>
+            </div>
+            <div class="input field">
+                <label>No of non AC rooms</label>
+                <input type="number" required>
+            </div>
+            <div class="input field">
+                <label>No of ICU</label>
+                <input type="number" required>
+            </div>
+            <div class="input field">
+                <label>Cost of general rooms</label>
+                <input type="text" id="gn" required>
+            </div>
+            <div class="input field">
+                <label>Cost of AC rooms</label>
+                <input type="text" id="ac" required>
+            </div>
+            <div class="input field">
+                <label>cost of non AC rooms</label>
+                <input type="text" id="nac" required>
+            </div>
+            <div class="input field">
+                <label>NCost of each ICU</label>
+                <input type="text" id="icu" required>
+            </div>
+            <div class="button">
+            <button type="submit"  value="Submit">Submit</button>
+            <button type="submit"  value="reset">reset</button>
+            </div>
+        </div>
+    </div>
+</div>
+</form>
